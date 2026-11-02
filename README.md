@@ -9,6 +9,14 @@ Ce projet contient la configuration d'un laboratoire Ansible.
   - `node2` (Debian)
   - `node3` (Rocky Linux)
 
-## Prérequis
+## Fonctionnalités
+
+Ce projet met en œuvre les concepts clés d'Ansible :
+- **Structure professionnelle** : Rôles modulaires (`common`, `nginx`), playbooks et variables (`group_vars`).
+- **Multi-OS** : Gestion automatique des différences entre Debian/Ubuntu (`apt`) et Rocky/RedHat (`dnf` + EPEL).
+- **Déploiement réel** : Installation de Nginx avec page personnalisée et gestion des services (handlers).
+- **Code réutilisable** : Paramétrage complet via variables.
+
+# # Prérequis
 - Ansible installé sur le nœud de contrôle.
 - Accès SSH par clé configuré entre le nœud de contrôle et les cibles.
