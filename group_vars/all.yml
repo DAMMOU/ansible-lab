@@ -1,2 +1,4 @@
 ---
 # Variables communes à tous les serveurs
+timezone: "Europe/Paris"
+
