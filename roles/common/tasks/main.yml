@@ -1,0 +1,22 @@
+---
+# Installation des paquets de base selon l'OS
+
+- name: Installer les outils de base (Debian/Ubuntu)
+  apt:
+    name: "{{ common_packages }}"
+    state: present
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+
+# --- Nouvelle tâche pour Rocky/RedHat ---
+- name: Activer le dépôt EPEL (RedHat/Rocky)
+  dnf:
+    name: epel-release
+    state: present
+  when: ansible_os_family == "RedHat"
+
+- name: Installer les outils de base (RedHat/Rocky)
+  dnf:
+    name: "{{ common_packages }}"
+    state: present
+  when: ansible_os_family == "RedHat"
