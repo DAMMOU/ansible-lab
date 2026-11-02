@@ -2,6 +2,11 @@
 - name: Configuration de base de tous les serveurs
   hosts: all
   become: yes
-
   roles:
     - common
+
+- name: Déploiement de Nginx sur le serveur web
+  hosts: node1
+  become: yes
+  roles:
+    - nginx
