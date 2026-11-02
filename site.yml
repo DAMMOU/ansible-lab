@@ -1,0 +1,15 @@
+---
+- name: Configuration de base de tous les serveurs
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Mettre à jour le cache APT (Debian/Ubuntu)
+      apt:
+        update_cache: yes
+      when: ansible_os_family == "Debian"
+
+    - name: Mettre à jour le cache DNF (RedHat/Rocky)
+      dnf:
+        update_cache: yes
+      when: ansible_os_family == "RedHat"

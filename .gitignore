@@ -1,0 +1,14 @@
+# Secrets
+*.vault
+.vault_pass
+secrets.yml
+
+# Clés SSH
+id_rsa
+id_rsa.pub
+*.pem
+
+# Fichiers temporaires
+*.retry
+*.log
+.cache/
